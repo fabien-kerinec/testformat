@@ -29,13 +29,49 @@
       font-size: 1.25em;
       color: white;
     }
+
+    .format {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .format::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(107, 107, 107, 0.397);
+      z-index: 1;
+    }
+
+    .format .content {
+      width: 90%;
+      height: 90%;
+      margin: 0 auto;
+      z-index: 2;
+
+    }
+
+    .content video {
+      width: 100%;
+      height: 100%;
+    }
   </style>
   <script>
+    var display = false;
     AFRAME.registerComponent('markerhandler', {
       init: function () {
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL
-          alert('yoyoyo5')
+          if (display === false) {
+            document.getElementById('format').css({
+              "display": "flex"
+            })
+          }
         });
       }
     })
@@ -59,6 +95,11 @@
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
+  <div class="format" if="format">
+    <div class="content">
+      <video autoplay muted src="https://madmixdigital.com/liendepreview/TestFormats/arjs/video.mp4"></video>
+    </div>
+  </div>
 </body>
 
 </html>
