@@ -68,6 +68,7 @@
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL
           if (display === false) {
+            alert('yovideo')
             document.getElementById('format').css({
               "display": "flex"
             })
@@ -95,7 +96,7 @@
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
-  <div class="format" if="format">
+  <div class="format" id="format">
     <div class="content">
       <video autoplay muted src="https://madmixdigital.com/liendepreview/TestFormats/arjs/video.mp4"></video>
     </div>
