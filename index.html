@@ -99,8 +99,8 @@
       } else if (attr === "markerhandler") {
         document.getElementById('format').style.display = 'flex';
       }
-      console.log(e.target.attributes['0']);
-      console.log(e.target.attributes[0]);
+      console.log(typeof e.target.attributes['0']);
+      console.log(e.target.attributes[0].toString().split("=")[0]);
     }
   </script>
 </head>
