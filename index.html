@@ -82,29 +82,25 @@
     var display = false;
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        this.el.sceneEl.addEventListener('markerFound', () => {
-          // redirect to custom URL
-          if (display === false) {
-            // alert('yovideo')
-            document.getElementById('format').style.display = 'flex';
-          }
-        });
+        this.el.sceneEl.addEventListener('markerFound', marker(e));
       }
     })
     AFRAME.registerComponent('markerhandlerdino', {
       init: function () {
-        this.el.sceneEl.addEventListener('markerFound', (event) => {
-          // redirect to custom URL
-          console.log(event);
-          if (display === false) {
-            alert('handler dino')
-          }
-        });
+        this.el.sceneEl.addEventListener('markerFound', marker(e));
       }
     })
 
     function marker(e) {
-
+      display = true
+      var attr = e.target.attributes['0']
+      if (attr === "markerhandlerdino") {
+        alert('handler dino')
+      } else if (attr === "markerhandler") {
+        document.getElementById('format').style.display = 'flex';
+      }
+      console.log(e.target.attributes['0']);
+      console.log(e.target.attributes[0]);
     }
   </script>
 </head>
