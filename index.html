@@ -82,12 +82,12 @@
     var display = false;
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        this.el.sceneEl.addEventListener('markerFound', marker());
+        this.el.sceneEl.addEventListener('markerFound', marker);
       }
     })
     AFRAME.registerComponent('markerhandlerdino', {
       init: function () {
-        this.el.sceneEl.addEventListener('markerFound', marker());
+        this.el.sceneEl.addEventListener('markerFound', marker);
       }
     })
 
