@@ -93,17 +93,17 @@
 
     function marker(e) {
       display = true
-      // var attr = e.target.attributes.outerHTML
-      // if (attr.includes("markerhandlerdino")) {
-      //   alert('handler dino')
-      // } else if (attr.includes("markerhandler")) {
-      //   document.getElementById('format').style.display = 'flex';
-      // }
-      console.log(typeof e.target.attributes['0'].name);
-      console.log(typeof e.target.attributes);
-      console.log(e.target.attributes);
-      console.log(JSON.stringify(e.target.attributes[0]).split("=")[0]);
-      console.log(JSON.stringify(e.target.attributes));
+      var attr = e.target.attributes['0'].name
+      if (attr === "markerhandlerdino") {
+        alert('handler dino')
+      } else if (attr === "markerhandler") {
+        document.getElementById('format').style.display = 'flex';
+      }
+      // console.log(typeof e.target.attributes['0']);
+      // console.log(typeof e.target.attributes);
+      // console.log(e.target.attributes);
+      // console.log(JSON.stringify(e.target.attributes[0]).split("=")[0]);
+      // console.log(JSON.stringify(e.target.attributes));
     }
   </script>
 </head>
