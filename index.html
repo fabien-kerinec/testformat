@@ -93,13 +93,13 @@
 
     function marker(e) {
       display = true
-      var attr = e.target.attributes['0']
-      if (attr === "markerhandlerdino") {
+      var attr = e.target.attributes.outerHTML
+      if (attr.includes("markerhandlerdino")) {
         alert('handler dino')
-      } else if (attr === "markerhandler") {
+      } else if (attr.includes("markerhandler")) {
         document.getElementById('format').style.display = 'flex';
       }
-      console.log(typeof e.target.attributes['0']);
+      console.log(typeof e.target.attributes['0'].name);
       console.log(typeof e.target.attributes);
       console.log(e.target.attributes);
       console.log(JSON.stringify(e.target.attributes[0]).split("=")[0]);
