@@ -79,11 +79,12 @@
   <script>
     var displaydino = false;
     var displayvideo = false;
+    var display = false;
     AFRAME.registerComponent('markerhandler', {
       init: function () {
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL
-          if (display === true) {
+          if (display === false) {
             // alert('yovideo')
             display = true
             document.getElementById('format').style.display = 'flex';
@@ -95,7 +96,7 @@
       init: function () {
         this.el.sceneEl.addEventListener('markerFound', () => {
           // redirect to custom URL
-          if (display === true) {
+          if (display === false) {
             display = true;
             alert('handler dino')
           }
