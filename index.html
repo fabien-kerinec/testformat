@@ -89,6 +89,17 @@
         });
       }
     })
+    AFRAME.registerComponent('markerhandlerdino', {
+      init: function () {
+        this.el.sceneEl.addEventListener('markerFound', () => {
+          // redirect to custom URL
+          if (display === false) {
+            alert('handler dino')
+            // document.getElementById('format').style.display = 'flex';
+          }
+        });
+      }
+    })
   </script>
 </head>
 
@@ -107,6 +118,9 @@
         scale="5 5 5" position="50 150 0">
       </a-entity> -->
     </a-nft>
+    <a-nft markerhandlerdino type="nft"
+      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+      smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
     <a-entity camera></a-entity>
   </a-scene>
   <div class="format" id="format">
